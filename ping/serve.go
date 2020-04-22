@@ -1,4 +1,4 @@
-package ping
+package Ping
 
 import (
 	"fmt"
@@ -6,17 +6,17 @@ import (
 	"net/http"
 )
 
-type Ping struct {
+type ping struct {
 	Router *mux.Router
 }
 
-func Serve(port string) {
-	sA := Ping{}
+func Serve(port int) {
+	sA := ping{}
 	sA.Router = mux.NewRouter()
 	sA.Router.HandleFunc("/ping", sA.Ping).Methods("GET")
-	http.ListenAndServe(fmt.Sprintf(":%s", port), sA.Router)
+	http.ListenAndServe(fmt.Sprintf(":%d", port), sA.Router)
 }
 
-func (sA *Ping) Ping(w http.ResponseWriter, r *http.Request) {
+func (sA *ping) Ping(w http.ResponseWriter, r *http.Request) {
 	w.Write([]byte("pong"))
 }
