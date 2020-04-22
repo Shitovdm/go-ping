@@ -10,11 +10,11 @@ type ping struct {
 	Router *mux.Router
 }
 
-func Serve(port int) {
+func Serve(port string) {
 	sA := ping{}
 	sA.Router = mux.NewRouter()
 	sA.Router.HandleFunc("/ping", sA.Ping).Methods("GET")
-	http.ListenAndServe(fmt.Sprintf(":%d", port), sA.Router)
+	http.ListenAndServe(fmt.Sprintf(":%s", port), sA.Router)
 }
 
 func (sA *ping) Ping(w http.ResponseWriter, r *http.Request) {

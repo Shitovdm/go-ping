@@ -9,6 +9,6 @@
 import "gitlab-e.artepay.ru/common/go-ping/Ping"
 
 func main() {
-    go Ping.Serve(8081)
+    go Ping.Serve("8081")
 }
 ```
