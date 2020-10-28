@@ -1,12 +1,12 @@
 # go-ping
 
 ## Getting
-`go get gitlab-e.artepay.ru/common/go-ping/Ping`
+`go get github.com/Shitovdm/go-ping/Ping`
 
 ## Usage  
 ```go
 
-import "gitlab-e.artepay.ru/common/go-ping/Ping"
+import "github.com/Shitovdm/go-ping/Ping"
 
 func main() {
     go Ping.Serve("8081")
